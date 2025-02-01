@@ -24,6 +24,6 @@ class FAQListAPIView(APIView):
             for faq in faqs
         ]
 
-        cache.set(cache_key, data, timeout=3600)  # Cache for 1 hour
+        cache.set(cache_key, data, timeout=3600)  
         return Response(data)
 

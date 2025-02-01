@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.shortcuts import redirect
 
 def redirect_to_faqs(request):
-    return redirect('/api/faqs/')  # Redirect to FAQs
+    return redirect('/api/faqs/')  
 
 urlpatterns = [
     path('', redirect_to_faqs),  # Redirect the empty path
