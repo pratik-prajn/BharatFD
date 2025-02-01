@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     
     
     'faqs',
+    'froala_editor',
 ]
 
 

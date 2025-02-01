@@ -1,9 +1,8 @@
-from django.shortcuts import render
 from django.core.cache import cache
+from django.utils.html import strip_tags
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import FAQ
-from .serializers import FAQSerializer
 
 class FAQListAPIView(APIView):
     def get(self, request):
@@ -18,12 +17,19 @@ class FAQListAPIView(APIView):
         data = [
             {
                 "id": faq.id,
-                "question": faq.get_translated_question(lang),
-                "answer": faq.answer,
+                # Translated question based on the requested language
+                "question": strip_tags(faq.get_translated_question(lang)),
+                # Original answer, stripped of HTML tags. You can also use get_translated_answer(lang) if needed.
+                "answer": strip_tags(faq.answer),
+                # Detected language for the question
+                "detected_lang": faq.detected_lang,
+                # English translation of the question (if exists)
+                "translated_question": strip_tags(faq.question_en) if faq.question_en else strip_tags(faq.question),
+                # English translation of the answer (if exists)
+                "translated_answer": strip_tags(faq.answer_en) if faq.answer_en else strip_tags(faq.answer),
             }
             for faq in faqs
         ]
 
-        cache.set(cache_key, data, timeout=3600)  
+        cache.set(cache_key, data, timeout=3600)
         return Response(data)
-
