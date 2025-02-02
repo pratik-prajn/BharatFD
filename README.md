@@ -1,19 +1,9 @@
 # BharatFD - Multilingual FAQ Backend
-
-A multilingual FAQ system built with Django, featuring automated language detection and translation capabilities.
+A multilingual FAQ system built with Django, featuring automated language detection and translation capabilities. It supports more than 40 languages, including both Indian and foreign languages.
 
 ## ✨ Key Features
 
-* Automatic language detection for questions and answers
-* Language-specific fields in API responses
-* Google Translate-powered auto-translation
-* Rich Text Editing (WYSIWYG) support with CKEditor
-* Django Admin Panel for easy management
-* Detects the language of both questions and answers
-* Translates non-English content to English
-* Stores detected language codes (ISO 639-1 format) in the database
-* Exposes language details via API responses
-* Fully functional Django REST Framework (DRF) API
+<img src="BharatFD_FAQ/images/Key Features - visual selection.png" >
 
 ## 📦 Installation & Setup
 
@@ -97,6 +87,7 @@ Response:
   }
 ]
 ```
+<img src="BharatFD_FAQ/images/bh4.png" >
 
 ### Create an FAQ
 ```http
@@ -134,27 +125,12 @@ pip install flake8
 flake8 --max-line-length=100
 ```
 
+<img src="BharatFD_FAQ/images/bh3.png" >
+<img src="BharatFD_FAQ/images/bh2.png" >
+
 ## 📜 Project Structure
 
-```
-django-faq-system/
-│── faqs/                     # FAQ app
-│   ├── migrations/           # Database migrations
-│   ├── models.py            # FAQ model
-│   ├── views.py             # API views
-│   ├── serializers.py       # API serializers
-│   ├── urls.py              # App-specific routes
-│   ├── admin.py             # Django Admin configuration
-│
-│── templates/               # HTML templates (if applicable)
-│── static/                  # Static files (CSS, JS, Images)
-│── manage.py                # Django project management script
-│── requirements.txt         # Dependencies
-│── README.md               # Documentation
-│── .flake8                 # Flake8 config (optional)
-│── .env                    # Environment variables (ignored in Git)
-```
-
+<img src="BharatFD_FAQ/images/- visual selection.png" >
 
 
 ## ✨ Author
